@@ -269,3 +269,23 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 650px) {
+    .mirror-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-bottom: 15px;
+    }
+    .mirror-name {
+        word-break: break-all;
+    }
+    .mirror-size {
+        margin: 0;
+    }
+    .mirror-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
