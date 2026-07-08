@@ -22,7 +22,7 @@
             <p class="tagline">An elegant, lightweight, security-hardened Linux distribution.</p>
         </header>
 
-        <!-- Terminal-Themed Download Button Section -->
+        <!-- Terminal-Themed Download Mirror -->
         <main class="window active" id="download-window">
             <div class="window-header">
                 <div class="window-controls">
@@ -30,15 +30,27 @@
                     <span class="control-dot yellow"></span>
                     <span class="control-dot green"></span>
                 </div>
-                <div class="window-title">axiom-install --download</div>
+                <div class="window-title">axiom-mirror --list</div>
                 <div style="width: 42px;"></div> <!-- visual spacer -->
             </div>
             <div class="window-body download-container">
-                <div class="prompt-text">axiom@pc:~$ ./download_latest.sh</div>
-                <a href="https://github.com/axiom-linux/axiom-install/releases" class="terminal-btn" target="_blank">
-                    <span class="btn-prompt">&gt;</span> DOWNLOAD LATEST RELEASE <span class="btn-blink">_</span>
-                </a>
-                <p class="download-sub">Current Release: Commit 2 (SM2) | Arch: x86_64 UEFI | Format: ISO</p>
+                <div class="prompt-text">axiom@pc:~$ list-iso-mirrors</div>
+                <div class="mirror-list">
+                    <!-- DOWNLOADS_START -->
+                    <div class="mirror-item">
+                        <span class="mirror-tag">[CM2]</span>
+                        <span class="mirror-name">axiomlinux-CM2-amd64.iso</span>
+                        <span class="mirror-size">(2.9 GB)</span>
+                        <a href="https://github.com/axiom-linux/axiom-install/releases/download/cm2/axiomlinux-CM2-amd64.iso" class="mirror-btn">DOWNLOAD</a>
+                    </div>
+                    <div class="mirror-item">
+                        <span class="mirror-tag">[CM1]</span>
+                        <span class="mirror-name">axiomlinux-CM1-amd64.iso</span>
+                        <span class="mirror-size">(2.0 GB)</span>
+                        <a href="https://github.com/axiom-linux/axiom-install/releases/download/cm1/axiomlinux-CM1-amd64.iso" class="mirror-btn">DOWNLOAD</a>
+                    </div>
+                    <!-- DOWNLOADS_END -->
+                </div>
             </div>
         </main>
 

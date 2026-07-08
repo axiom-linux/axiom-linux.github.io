@@ -221,65 +221,75 @@ body::after {
     font-size: 0.95rem;
 }
 
-/* Download Container */
+/* Download Container & Mirror List */
 .download-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 45px 20px;
-    gap: 20px;
-    text-align: center;
+    padding: 20px;
+    background-color: #121212;
 }
 
 .prompt-text {
-    font-size: 1.05rem;
-    color: var(--muted-color);
-    margin-bottom: 5px;
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.terminal-btn {
+.mirror-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.mirror-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.95rem;
+}
+
+.mirror-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.mirror-tag {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.mirror-name {
+    flex-grow: 1;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.mirror-size {
+    color: var(--muted-color);
+    margin-right: 25px;
+    font-size: 0.85rem;
+}
+
+.mirror-btn {
     display: inline-block;
-    padding: 18px 36px;
-    border: 2px solid var(--accent-color);
+    border: 1px solid var(--accent-color);
     background-color: transparent;
     color: var(--accent-color);
-    font-family: 'Fantasque Sans Mono', monospace;
-    font-size: 1.3rem;
+    padding: 6px 16px;
+    font-size: 0.85rem;
     font-weight: bold;
     text-decoration: none;
-    text-shadow: 0 0 5px var(--glow-color);
-    box-shadow: 0 0 10px var(--glow-color);
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 2px;
     transition: all 0.2s ease-in-out;
 }
 
-.terminal-btn:hover {
+.mirror-btn:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
-    box-shadow: 0 0 20px var(--accent-color);
-    text-shadow: none;
-    transform: scale(1.02);
-}
-
-.btn-prompt {
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-.btn-blink {
-    display: inline-block;
-    animation: blink 1s step-end infinite;
-}
-
-.download-sub {
-    font-size: 0.85rem;
-    color: var(--muted-color);
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
+    box-shadow: 0 0 10px var(--glow-color);
 }
 
 /* Footer Section */
