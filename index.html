@@ -81,6 +81,264 @@
             </div>
         </section>
 
+        <!-- Interactive Roadmap Section -->
+        <section class="window" id="roadmap-window">
+            <div class="window-header">
+                <div class="window-title">axiom --roadmap</div>
+            </div>
+            <div class="window-body roadmap-container">
+                <div class="roadmap-tabs">
+                    <button class="roadmap-tab-btn active" onclick="showRoadmapTab(event, 'commit')">Part 1: Commit Phase (CM)</button>
+                    <button class="roadmap-tab-btn" onclick="showRoadmapTab(event, 'alphabeta')">Part 2: AlphaBeta Phase</button>
+                    <button class="roadmap-tab-btn" onclick="showRoadmapTab(event, 'beta')">Part 3 & 4: Beta & Codenames</button>
+                </div>
+
+                <!-- Part 1: Commit Phase -->
+                <div class="roadmap-content active" id="roadmap-commit">
+                    <div class="roadmap-header">
+                        <h3>Part 1: Commit Phase (CM)</h3>
+                        <p class="roadmap-goal">Goal: Making Axiom functional, established, and leveled with regular distributions.</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot completed"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-title">CM1 (Commit 1): The Foundation</span>
+                                <span class="status-badge done">COMPLETED</span>
+                            </div>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Establish and integrate all brand assets (logos, icons, and typography).</li>
+                                    <li>Perform initial debloat of the Debian base.</li>
+                                    <li>Apply core system optimizations for speed, resource management, and hardware compatibility.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot completed"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-title">CM2 (Commit 2): The Gateway</span>
+                                <span class="status-badge done">COMPLETED</span>
+                            </div>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Create a simple, robust, interactive installation script (modeled after the simplicity of archinstall).</li>
+                                    <li>Ensure reliable partitioning, bootloader installation, and essential system setup.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot in-progress"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-title">CM3 (Commit 3): The Desktop Experience</span>
+                                <span class="status-badge active">IN PROGRESS</span>
+                            </div>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Establish Axiom as a full-fledged desktop distribution.</li>
+                                    <li>Add automated options for proprietary and open-source Graphics drivers.</li>
+                                    <li>Integrate a custom selection of Desktop Environments and Window Managers.</li>
+                                    <li>Create a custom-themed LXQt live environment accessible by typing <code>axiom-live-desktop</code> from the live ISO.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot planned"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-title">CM4 (Commit 4): Polish & Finalization</span>
+                                <span class="status-badge todo">PLANNED</span>
+                            </div>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Deeply theme and polish the Desktop Environments (leaving Window Managers stock/clean to respect power-user preferences).</li>
+                                    <li>Refine user-facing system tools, finalize operating system branding, and resolve outstanding bugs.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 2: AlphaBeta Phase -->
+                <div class="roadmap-content" id="roadmap-alphabeta">
+                    <div class="roadmap-header">
+                        <h3>Part 2: AlphaBeta Phase</h3>
+                        <p class="roadmap-goal">Goal: Implementing the unique, declarative, and containerized hybrid desktop architecture.</p>
+                    </div>
+                    
+                    <div class="roadmap-columns">
+                        <div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 1: The Declarative Core (Host MVP)</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Establish <code>/etc/axiom/axiom.yaml</code> to track local packages and flatpaks.</li>
+                                            <li>Develop lightweight Python engine <code>axm apply</code> to resolve package deltas and keyrings local-only.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 2: State Rollbacks & Config Management</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Add dotfiles configuration syncing directly to user home directories.</li>
+                                            <li>Introduce <code>axm rollback</code> to instantly revert package/config states.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 3: The Axiom Migrator</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Develop non-destructive in-place installer migration tool.</li>
+                                            <li>Safely shrinks host OS, sets up temp cache, and imports user home data cleanly on first boot.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 4: Container Bridge & Smart Migration</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Out-of-the-box native integration for Podman & Distrobox.</li>
+                                            <li>Declarative <code>containers:</code> block in <code>axiom.yaml</code> configurations.</li>
+                                            <li>Automatic analysis of legacy installations to build declarative dist-packages blueprints.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 5: Dry-Runs & GUI State Editor</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Add dry-runs (<code>axm check</code>) to validate YAML syntax and target additions safely.</li>
+                                            <li>Graphical state editor mapping toggles directly back into YAML blueprints.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="roadmap-header" style="border: none; margin: 0; padding: 0;">
+                                <h4 style="color: var(--accent-color); margin-bottom: 5px;">Axiom Architecture</h4>
+                                <p style="font-size: 0.85rem; color: var(--muted-color);">Hybrid Declarative Model:</p>
+                            </div>
+                            <pre class="ascii-diagram">
++-----------------------------------+
+|      ELEVATED SYSTEM LAYER        |
+| (Declarative Apps, Containers)    |
++-----------------------------------+
+                  |
+                  v
++-----------------------------------+
+|       STABLE DEBIAN BASE          |
+|      (Simple, Rock-Solid)         |
++-----------------------------------+
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part 3 & 4: Beta & Codenames -->
+                <div class="roadmap-content" id="roadmap-beta">
+                    <div class="roadmap-header">
+                        <h3>Part 3: Beta Phase</h3>
+                        <p class="roadmap-goal">Goal: Refinement, hardening, and building out the distribution community.</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot planned"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-title">Beta Milestones</span>
+                                <span class="status-badge todo">PLANNED</span>
+                            </div>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li><strong>Sandbox Hardening</strong>: Lock down container user namespaces and path access permissions.</li>
+                                    <li><strong>Performance Tuning</strong>: Reduce system container startup and shell overlay overhead.</li>
+                                    <li><strong>Community Verification</strong>: Launch public beta testing cycles and bug feedback networks.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-header" style="margin-top: 25px;">
+                        <h3>Part 4: Release Codenames Roadmap</h3>
+                        <p class="roadmap-goal">Themed around distinct seal species (in order of release):</p>
+                    </div>
+                    <div class="codename-grid">
+                        <div class="codename-card">
+                            <span class="codename-num">Release 1</span>
+                            <strong>Harp</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 2</span>
+                            <strong>Baikal</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 3</span>
+                            <strong>Harbor</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 4</span>
+                            <strong>Weddell</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 5</span>
+                            <strong>Ribbon</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 6</span>
+                            <strong>Caspian</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 7</span>
+                            <strong>Grey</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 8</span>
+                            <strong>Largha</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 9</span>
+                            <strong>Crabeater</strong>
+                        </div>
+                        <div class="codename-card">
+                            <span class="codename-num">Release 10</span>
+                            <strong>Leopard</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer>
             <p>Axiom GNU/Linux is open-source software under the GPLv3 License.</p>
@@ -94,6 +352,13 @@
             const select = document.getElementById("latest-download-select");
             const filename = select.value;
             window.location.href = "https://archive.org/download/axiom-linux-releases/" + filename;
+        }
+
+        function showRoadmapTab(event, tabId) {
+            document.querySelectorAll('.roadmap-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.roadmap-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('roadmap-' + tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
         }
     </script>
 </body>

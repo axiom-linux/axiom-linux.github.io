@@ -339,3 +339,222 @@ footer a:hover {
         text-align: center;
     }
 }
+
+/* Interactive Roadmap styles */
+.roadmap-container {
+    padding: 20px;
+}
+
+.roadmap-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.roadmap-tab-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.roadmap-tab-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.roadmap-tab-btn.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+.roadmap-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.roadmap-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.roadmap-header {
+    margin-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 10px;
+}
+
+.roadmap-goal {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid var(--border-color);
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -26px;
+    top: 3px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--muted-color);
+}
+
+.timeline-dot.completed {
+    border-color: #10b981;
+    background-color: #10b981;
+}
+
+.timeline-dot.in-progress {
+    border-color: var(--accent-color);
+    background-color: var(--bg-color);
+    box-shadow: 0 0 8px var(--accent-color);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+.timeline-dot.planned {
+    border-color: var(--border-color);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.timeline-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.status-badge.done {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+.status-badge.active {
+    background-color: rgba(96, 165, 250, 0.15);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.status-badge.todo {
+    background-color: rgba(156, 163, 175, 0.1);
+    color: var(--muted-color);
+    border: 1px solid var(--border-color);
+}
+
+.timeline-details {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.timeline-details ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.timeline-details li {
+    margin-bottom: 4px;
+}
+
+/* ASCII and diagram styling */
+.ascii-diagram {
+    font-family: monospace;
+    color: var(--accent-color);
+    white-space: pre;
+    line-height: 1.25;
+    margin: 20px 0;
+    overflow-x: auto;
+    background-color: #151515;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.roadmap-columns {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 25px;
+}
+
+@media (max-width: 800px) {
+    .roadmap-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+.codename-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.codename-card {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    background-color: #181818;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.codename-card:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.codename-num {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    margin-bottom: 4px;
+    display: block;
+    font-weight: bold;
+}
