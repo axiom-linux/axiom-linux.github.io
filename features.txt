@@ -1,0 +1,84 @@
+================================================================================
+                    AXIOM GNU/LINUX - SYSTEM FEATURES CATALOG
+================================================================================
+
+1. CORE SYSTEM & BASE CUSTOMIZATIONS (COMPLETED)
+--------------------------------------------------------------------------------
+* Brand Integration: Comprehensive system-wide integration of custom Axiom logos, 
+  icons, and typography.
+* Minimal Base: A deeply debloated and cleaned stable Debian system base.
+* Speed Optimizations: Custom kernel configurations and runtime parameter 
+  optimizations to improve execution speed, memory footprint, and hardware 
+  compatibility.
+
+2. INSTALLATION & DEPLOYMENT (COMPLETED)
+--------------------------------------------------------------------------------
+* Interactive CLI Installer: A simple, robust, and paginated terminal dashboard 
+  installer script (modeled after the ease of archinstall).
+* Layout Partitioning: Secure automated disk partitioning for Ext4 targets 
+  incorporating ESP and Swap.
+* Dual Boot Mode: Automated bootloader configurations supporting both Legacy 
+  BIOS (grub-pc and bios_grub sectors) and modern UEFI installations.
+
+3. DESKTOP EXPERIENCE & GRAPHICS (COMPLETED)
+--------------------------------------------------------------------------------
+* Live TTY Wrapper: A dedicated, themed LXQt live environment initialized by 
+  typing 'axiom-live-desktop' from any live TTY session.
+* Desktop Choices: Clean pre-configured options for modern Desktop Environments 
+  and lightweight Window Managers.
+* GPU Driver Integration: Simplified, automated detection and configuration 
+  switches for both proprietary and open-source graphics drivers.
+
+4. SYSTEM POLISH & HARDENING (IN PROGRESS)
+--------------------------------------------------------------------------------
+* Desktop Styling: Deeply themed, cohesive aesthetics for pre-installed Desktop 
+  Environments (while keeping window managers stock to respect user power-choices).
+* System Utilities: Polished settings wrappers, finalized branding assets, 
+  and automated post-installation firstboot cleanups.
+
+5. DECLARATIVE HYBRID ARCHITECTURE (PLANNED / ALPHAS)
+--------------------------------------------------------------------------------
+* Alpha 1: The Declarative Core (Host MVP)
+  - Establish '/etc/axiom/axiom.yaml' to track local packages and flatpaks.
+  - Develop a lightweight Python engine ('axm apply') to resolve package deltas 
+    and keyrings locally (offline/local-only).
+* Alpha 2: State Rollbacks & Config Management
+  - Add dotfiles configuration syncing directly to user home directories.
+  - Introduce 'axm rollback' to instantly revert package and configuration states.
+* Alpha 3: The Axiom Migrator
+  - Develop a non-destructive in-place installer migration tool.
+  - Safely shrinks host OS, sets up a temporary cache, and imports user home 
+    data cleanly on first boot.
+* Alpha 4: Container Bridge & Smart Migration
+  - Out-of-the-box native integration for Podman & Distrobox.
+  - Declarative 'containers:' block in the 'axiom.yaml' configurations.
+  - Automatic analysis of legacy installations to build declarative 
+    dist-packages blueprints.
+* Alpha 5: Dry-Runs & GUI State Editor
+  - Add dry-runs ('axm check') to validate YAML syntax and target additions 
+    safely.
+  - Graphical state editor mapping toggles directly back into YAML blueprints.
+
+6. BETA PHASE REFINEMENT (PLANNED)
+--------------------------------------------------------------------------------
+* Sandbox Hardening: Lock down container user namespaces and path access 
+  permissions.
+* Performance Tuning: Reduce system container startup and shell overlay 
+  execution overhead.
+* Community Verification: Launch public beta testing cycles and bug feedback 
+  networks.
+
+7. RELEASE CODENAMES ROADMAP
+--------------------------------------------------------------------------------
+Themed around distinct seal species (in order of release):
+* Release 1  : Harp
+* Release 2  : Baikal
+* Release 3  : Harbor
+* Release 4  : Weddell
+* Release 5  : Ribbon
+* Release 6  : Caspian
+* Release 7  : Grey
+* Release 8  : Largha
+* Release 9  : Crabeater
+* Release 10 : Leopard
+================================================================================
