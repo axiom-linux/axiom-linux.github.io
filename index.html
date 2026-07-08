@@ -35,7 +35,7 @@
                         <span class="mirror-tag">[CM2]</span>
                         <span class="mirror-name">axiomlinux-CM2-amd64.iso</span>
                         <span class="mirror-size">(2.9 GB)</span>
-                        <button onclick="downloadParts('cm2', 'axiomlinux-CM2-amd64.iso', 10)" class="mirror-btn" style="cursor: pointer;">DOWNLOAD</button>
+                        <button onclick="downloadParts('axiomlinux-CM2-amd64.iso', 29)" class="mirror-btn" style="cursor: pointer;">DOWNLOAD</button>
                     </div>
                     <div class="mirror-item">
                         <span class="mirror-tag">[CM1]</span>
@@ -93,7 +93,7 @@
     </div>
 
     <script>
-        async function downloadParts(tag, filename, partCount) {
+        async function downloadParts(filename, partCount) {
             const btn = event.target;
             const originalText = btn.innerText;
             btn.disabled = true;
@@ -105,7 +105,7 @@
                     const partName = `${filename}.part${pad}`;
                     btn.innerText = `DOWNLOADING PART ${i+1}/${partCount}...`;
                     
-                    const url = `https://github.com/axiom-linux/axiom-mirror/releases/download/${tag}/${partName}`;
+                    const url = `https://raw.githubusercontent.com/axiom-linux/axiom-mirror/main/${partName}`;
                     const response = await fetch(url);
                     if (!response.ok) throw new Error(`Failed to download part ${i+1}`);
                     
