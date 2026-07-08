@@ -270,6 +270,57 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Select Dropdown styling */
+.mirror-select {
+    background-color: #1a1a1a;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 6px 12px;
+    font-family: 'Fantasque Sans Mono', monospace;
+    font-size: 0.85rem;
+    border-radius: 0px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.mirror-select:focus {
+    border-color: var(--accent-color);
+}
+
+.download-action-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.archive-link-container {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.archive-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.archive-link:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 650px) {
     .mirror-item {
         flex-direction: column;
@@ -287,5 +338,14 @@ footer a:hover {
         width: 100%;
         text-align: center;
         padding: 10px;
+    }
+    .download-action-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    .mirror-select {
+        width: 100%;
+        text-align: center;
     }
 }

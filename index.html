@@ -31,19 +31,11 @@
                 <div class="prompt-text">axiom@pc:~$ list-iso-mirrors</div>
                 <div class="mirror-list">
                     <!-- DOWNLOADS_START -->
-                    <div class="mirror-item">
-                        <span class="mirror-tag">[CM2]</span>
-                        <span class="mirror-name">axiomlinux-CM2-amd64.iso</span>
-                        <span class="mirror-size">(2.9 GB)</span>
-                        <button onclick="downloadParts('axiomlinux-CM2-amd64.iso', 29)" class="mirror-btn" style="cursor: pointer;">DOWNLOAD</button>
-                    </div>
-                    <div class="mirror-item">
-                        <span class="mirror-tag">[CM1]</span>
-                        <span class="mirror-name">axiomlinux-CM1-amd64.iso</span>
-                        <span class="mirror-size">(2.0 GB)</span>
-                        <a href="https://github.com/axiom-linux/axiom-mirror/releases/download/cm1/axiomlinux-CM1-amd64.iso" class="mirror-btn">DOWNLOAD</a>
-                    </div>
+
                     <!-- DOWNLOADS_END -->
+                </div>
+                <div class="archive-link-container">
+                    <a href="downloads/" class="archive-link">[ View all historical releases and checksums ]</a>
                 </div>
             </div>
         </main>
@@ -93,53 +85,10 @@
     </div>
 
     <script>
-        async function downloadParts(filename, partCount) {
-            const btn = event.target;
-            const originalText = btn.innerText;
-            btn.disabled = true;
-            
-            try {
-                const parts = [];
-                for (let i = 0; i < partCount; i++) {
-                    const pad = i.toString().padStart(2, '0');
-                    const partName = `${filename}.part${pad}`;
-                    btn.innerText = `DOWNLOADING PART ${i+1}/${partCount}...`;
-                    
-                    const url = `https://raw.githubusercontent.com/axiom-linux/axiom-mirror/main/${partName}`;
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error(`Failed to download part ${i+1}`);
-                    
-                    const blob = await response.blob();
-                    parts.push(blob);
-                }
-                
-                btn.innerText = "MERGING PARTS...";
-                const mergedBlob = new Blob(parts, { type: "application/octet-stream" });
-                
-                btn.innerText = "SAVING FILE...";
-                const downloadUrl = URL.createObjectURL(mergedBlob);
-                const a = document.createElement("a");
-                a.href = downloadUrl;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                URL.revokeObjectURL(downloadUrl);
-                
-                btn.innerText = "DONE!";
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 3000);
-            } catch (err) {
-                console.error(err);
-                btn.innerText = "ERROR!";
-                alert(`Download failed: ${err.message}`);
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 3000);
-            }
+        function downloadLatest() {
+            const select = document.getElementById("latest-download-select");
+            const filename = select.value;
+            window.location.href = "https://archive.org/download/axiom-linux-releases/" + filename;
         }
     </script>
 </body>
