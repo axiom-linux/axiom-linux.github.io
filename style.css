@@ -116,22 +116,12 @@ body {
     padding: 20px 0;
 }
 
-.ascii-logo {
-    color: var(--accent-color);
-    font-family: monospace;
-    white-space: pre;
-    font-size: 0.75rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    overflow-x: auto;
-    display: inline-block;
-    text-align: left;
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: var(--muted-color);
-    margin-top: 10px;
+.main-logo {
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 100%;
+    width: 600px;
+    height: auto;
 }
 
 /* Feature Grid */
