@@ -1,0 +1,305 @@
+/* =====================================================================
+   Axiom Linux CSS Stylesheet - terminal-themed landing page
+   ===================================================================== */
+
+@font-face {
+    font-family: 'Fantasque Sans Mono';
+    src: url('https://cdn.jsdelivr.net/gh/belluzj/fantasque-sans@v1.8.0/webfonts/FantasqueSansMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fantasque Sans Mono';
+    src: url('https://cdn.jsdelivr.net/gh/belluzj/fantasque-sans@v1.8.0/webfonts/FantasqueSansMono-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fantasque Sans Mono';
+    src: url('https://cdn.jsdelivr.net/gh/belluzj/fantasque-sans@v1.8.0/webfonts/FantasqueSansMono-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --bg-color: #1c1c1c;
+    --accent-color: #60a5fa;
+    --text-color: #e5e7eb;
+    --muted-color: #9ca3af;
+    --border-color: #374151;
+    --glow-color: rgba(96, 165, 250, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Fantasque Sans Mono', monospace;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* CRT Scanline Overlay Effect */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    aspect-ratio: 1;
+    background-size: 100% 3px, 6px 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Layout Wrapper */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Window Frames (Terminal Look) */
+.window {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #151515;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.window.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.window-header {
+    background-color: #222;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #374151;
+}
+
+.window.active .control-dot.red { background-color: #f87171; }
+.window.active .control-dot.yellow { background-color: #fbbf24; }
+.window.active .control-dot.green { background-color: #34d399; }
+
+.window-title {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+}
+
+.window.active .window-title {
+    color: var(--accent-color);
+}
+
+.window-body {
+    padding: 20px;
+}
+
+/* ASCII Header & Hero */
+.hero {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.ascii-logo {
+    color: var(--accent-color);
+    font-family: monospace;
+    white-space: pre;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    text-shadow: 0 0 8px var(--glow-color);
+    display: inline-block;
+    text-align: left;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--muted-color);
+    margin-top: 10px;
+}
+
+/* Feature Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature-card {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    background-color: #181818;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--glow-color);
+    transform: translateY(-2px);
+}
+
+.feature-index {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.feature-title {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-desc {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+}
+
+/* Terminal Simulator Console */
+.terminal-console {
+    font-size: 0.95rem;
+    height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.terminal-line {
+    word-break: break-all;
+}
+
+.terminal-line.output {
+    color: var(--muted-color);
+    margin-left: 15px;
+    white-space: pre-wrap;
+}
+
+.terminal-line.success {
+    color: var(--accent-color);
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.terminal-prompt {
+    color: var(--accent-color);
+}
+
+.terminal-input-wrapper {
+    flex-grow: 1;
+    position: relative;
+}
+
+.terminal-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: inherit;
+    caret-color: transparent; /* custom cursor */
+}
+
+.terminal-caret {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--accent-color);
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 30px 0 10px 0;
+    font-size: 0.85rem;
+    color: var(--muted-color);
+    border-top: 1px dashed var(--border-color);
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

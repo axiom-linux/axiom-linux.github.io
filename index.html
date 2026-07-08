@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiom GNU/Linux - Official Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header / Hero Section -->
+        <header class="hero">
+            <pre class="ascii-logo">
+ █████  ██   ██ ██  ██████  ███    ███ 
+██   ██  ██ ██  ██ ██    ██ ████  ████ 
+███████   ███   ██ ██    ██ ██ ████ ██ 
+██   ██  ██ ██  ██ ██    ██ ██  ██  ██ 
+██   ██ ██   ██ ██  ██████  ██      ██ 
+            </pre>
+            <p class="tagline">An elegant, lightweight, security-hardened Linux distribution.</p>
+        </header>
+
+        <!-- Interactive Terminal Window -->
+        <main class="window active" id="terminal-window">
+            <div class="window-header">
+                <div class="window-controls">
+                    <span class="control-dot red"></span>
+                    <span class="control-dot yellow"></span>
+                    <span class="control-dot green"></span>
+                </div>
+                <div class="window-title">mason@axiom-pc:~ (terminal)</div>
+                <div style="width: 42px;"></div> <!-- visual spacer -->
+            </div>
+            <div class="window-body">
+                <div class="terminal-console" id="console">
+                    <!-- Lines populated by script.js -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Features Section -->
+        <section class="window" id="features-window">
+            <div class="window-header">
+                <div class="window-controls">
+                    <span class="control-dot"></span>
+                    <span class="control-dot"></span>
+                    <span class="control-dot"></span>
+                </div>
+                <div class="window-title">features.txt - nano 8.0</div>
+                <div style="width: 42px;"></div>
+            </div>
+            <div class="window-body">
+                <div class="features-grid">
+                    
+                    <div class="feature-card">
+                        <div class="feature-index">[01]</div>
+                        <h3 class="feature-title">Declarative Package System</h3>
+                        <p class="feature-desc">Configure your system in a single profile. Rebuild, reproduce, and backup your software stack instantly, inspired by NixOS reproducibility.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-index">[02]</div>
+                        <h3 class="feature-title">Centrist Distribution</h3>
+                        <p class="feature-desc">Built for intermediate Linux enthusiasts and purists alike. Blends custom DIY configuration control with a clean, fully functional baseline desktop environment.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-index">[03]</div>
+                        <h3 class="feature-title">Container Multi-Distro Support</h3>
+                        <p class="feature-desc">Native integration for running isolated packages from any distribution inside lightweight, high-performance local containers under a unified command.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-index">[04]</div>
+                        <h3 class="feature-title">Independent Architecture</h3>
+                        <p class="feature-desc">An independent passion project architected and programmed from scratch by a 13-year-old developer. Made by a coder, for coders.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Axiom GNU/Linux is open-source software under the GPLv3 License.</p>
+            <p>Made with love by <a href="https://github.com/Masoronii" target="_blank">Masoronii</a> &copy; 2026. <span style="color: var(--accent-color);">Type "help" in the terminal above to explore commands.</span></p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
