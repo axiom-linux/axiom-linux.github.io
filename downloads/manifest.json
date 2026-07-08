@@ -1,10 +1,5 @@
 [
   {
-    "name": "axiomlinux-CM2-amd64.md5",
-    "size": 58,
-    "md5": "0aee5a008f2496f94df939569f8c99e1"
-  },
-  {
     "name": "axiomlinux-CM1-amd64.iso",
     "size": 2083074048,
     "md5": "4c9f7ead194def49cd73dea434dc38b6"
@@ -13,5 +8,10 @@
     "name": "axiomlinux-CM2-amd64.iso",
     "size": 2385094656,
     "md5": "c42d69472b329844e1445508bd68226a"
+  },
+  {
+    "name": "axiomlinux-CM2-amd64.md5",
+    "size": 58,
+    "md5": "9869f118c62d02c543baa9fa02119703"
   }
 ]
