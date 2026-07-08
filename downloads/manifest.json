@@ -8,5 +8,10 @@
     "name": "axiomlinux-CM1-amd64.iso",
     "size": 2083074048,
     "md5": "4c9f7ead194def49cd73dea434dc38b6"
+  },
+  {
+    "name": "axiomlinux-CM2-amd64.iso",
+    "size": 2962601984,
+    "md5": "e987bf383d9adad3c615c55af6e6833f"
   }
 ]
