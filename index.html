@@ -22,21 +22,23 @@
             <p class="tagline">An elegant, lightweight, security-hardened Linux distribution.</p>
         </header>
 
-        <!-- Interactive Terminal Window -->
-        <main class="window active" id="terminal-window">
+        <!-- Terminal-Themed Download Button Section -->
+        <main class="window active" id="download-window">
             <div class="window-header">
                 <div class="window-controls">
                     <span class="control-dot red"></span>
                     <span class="control-dot yellow"></span>
                     <span class="control-dot green"></span>
                 </div>
-                <div class="window-title">mason@axiom-pc:~ (terminal)</div>
+                <div class="window-title">axiom-install --download</div>
                 <div style="width: 42px;"></div> <!-- visual spacer -->
             </div>
-            <div class="window-body">
-                <div class="terminal-console" id="console">
-                    <!-- Lines populated by script.js -->
-                </div>
+            <div class="window-body download-container">
+                <div class="prompt-text">axiom@pc:~$ ./download_latest.sh</div>
+                <a href="https://github.com/axiom-linux/axiom-install/releases" class="terminal-btn" target="_blank">
+                    <span class="btn-prompt">&gt;</span> DOWNLOAD LATEST RELEASE <span class="btn-blink">_</span>
+                </a>
+                <p class="download-sub">Current Release: Commit 2 (SM2) | Arch: x86_64 UEFI | Format: ISO</p>
             </div>
         </main>
 
@@ -85,11 +87,10 @@
         <!-- Footer -->
         <footer>
             <p>Axiom GNU/Linux is open-source software under the GPLv3 License.</p>
-            <p>Made with love by <a href="https://github.com/Masoronii" target="_blank">Masoronii</a> &copy; 2026. <span style="color: var(--accent-color);">Type "help" in the terminal above to explore commands.</span></p>
+            <p>Made with love by <a href="https://github.com/Masoronii" target="_blank">Masoronii</a> &copy; 2026.</p>
         </footer>
 
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
