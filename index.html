@@ -46,8 +46,8 @@
                         <span class="mirror-size">(2.6 GB)</span>
                         <div class="download-action-group">
                             <select id="latest-download-select" class="mirror-select">
-                                <option value="axiomlinux-CM3-amd64.iso">ISO Image</option>
-                                <option value="axiomlinux-CM3-amd64.md5">MD5 Checksum</option>
+                                <option value="https://archive.org/download/axiom-linux-releases/axiomlinux-CM3-amd64.iso">ISO Image</option>
+                                <option value="https://archive.org/download/axiom-linux-releases/axiomlinux-CM3-amd64.md5">MD5 Checksum</option>
                             </select>
                             <button onclick="downloadLatest()" class="mirror-btn" style="cursor: pointer;">DOWNLOAD LATEST</button>
                         </div>
@@ -413,8 +413,7 @@
     <script>
         function downloadLatest() {
             const select = document.getElementById("latest-download-select");
-            const filename = select.value;
-            window.location.href = "https://archive.org/download/axiom-linux-releases/" + filename;
+            window.location.href = select.value;
         }
 
         function showRoadmapTab(event, tabId) {
