@@ -28,5 +28,10 @@
     "name": "axiomlinux-CM4-amd64.iso",
     "size": 2870093824,
     "md5": "9bbe941b232f50468b3bf47cc727b0fc"
+  },
+  {
+    "name": "axiomlinux-CM4-amd64.md5",
+    "size": 58,
+    "md5": "04c508a209807488dc0134097a1abfea"
   }
 ]
