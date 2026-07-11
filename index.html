@@ -151,13 +151,13 @@
             </div>
             <div class="window-body roadmap-container">
                 <div class="roadmap-tabs">
-                    <button class="roadmap-tab-btn active" onclick="showRoadmapTab(event, 'commit')">Part 1: Commit Phase (CM)</button>
-                    <button class="roadmap-tab-btn" onclick="showRoadmapTab(event, 'alphabeta')">Part 2: AlphaBeta Phase</button>
+                    <button class="roadmap-tab-btn" onclick="showRoadmapTab(event, 'commit')">Part 1: Commit Phase (CM)</button>
+                    <button class="roadmap-tab-btn active" onclick="showRoadmapTab(event, 'alphabeta')">Part 2: AlphaBeta Phase</button>
                     <button class="roadmap-tab-btn" onclick="showRoadmapTab(event, 'beta')">Part 3 & 4: Beta & Codenames</button>
                 </div>
 
                 <!-- Part 1: Commit Phase -->
-                <div class="roadmap-content active" id="roadmap-commit">
+                <div class="roadmap-content" id="roadmap-commit">
                     <div class="roadmap-header">
                         <h3>Part 1: Commit Phase (CM)</h3>
                         <p class="roadmap-goal">Goal: Making Axiom functional, established, and leveled with regular distributions.</p>
@@ -209,10 +209,10 @@
                         </div>
 
                         <div class="timeline-item">
-                            <div class="timeline-dot in-progress"></div>
+                            <div class="timeline-dot completed"></div>
                             <div class="timeline-header">
                                 <span class="timeline-title">CM4 (Commit 4): Polish & Finalization</span>
-                                <span class="status-badge active">IN PROGRESS</span>
+                                <span class="status-badge done">COMPLETED</span>
                             </div>
                             <div class="timeline-details">
                                 <ul>
@@ -225,7 +225,7 @@
                 </div>
 
                 <!-- Part 2: AlphaBeta Phase -->
-                <div class="roadmap-content" id="roadmap-alphabeta">
+                <div class="roadmap-content active" id="roadmap-alphabeta">
                     <div class="roadmap-header">
                         <h3>Part 2: AlphaBeta Phase</h3>
                         <p class="roadmap-goal">Goal: Implementing the unique, declarative, and containerized hybrid desktop architecture.</p>
@@ -235,10 +235,10 @@
                         <div>
                             <div class="timeline">
                                 <div class="timeline-item">
-                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-dot in-progress"></div>
                                     <div class="timeline-header">
                                         <span class="timeline-title">Alpha 1: The Declarative Core (Host MVP)</span>
-                                        <span class="status-badge todo">PLANNED</span>
+                                        <span class="status-badge active">IN PROGRESS</span>
                                     </div>
                                     <div class="timeline-details">
                                         <ul>
