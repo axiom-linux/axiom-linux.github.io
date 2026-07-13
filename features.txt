@@ -34,8 +34,7 @@
 * Desktop Styling: Deeply themed, cohesive aesthetics for pre-installed Desktop 
   Environments (while keeping window managers stock to respect user power-choices).
 * System Utilities: Polished settings wrappers, finalized branding assets, 
-  automated post-installation firstboot cleanups, and a boot diagnostics 
-  console ('axm boot-profile').
+  and automated post-installation firstboot cleanups.
 
 5. DECLARATIVE HYBRID ARCHITECTURE (PLANNED / ALPHAS)
 --------------------------------------------------------------------------------
@@ -48,10 +47,11 @@
 * Alpha 2: State Rollbacks & Config Management
   - Add dotfiles configuration syncing directly to user home directories.
   - Introduce 'axm rollback' to instantly revert package and configuration states.
-* Alpha 3: The Axiom Migrator
+* Alpha 3: The Axiom Migrator & Boot Profiling
   - Develop a non-destructive in-place installer migration tool.
   - Safely shrinks host OS, sets up a temporary cache, and imports user home 
     data cleanly on first boot.
+  - Integrate the boot performance diagnostics console ('axm boot-profile').
 * Alpha 4: Container Bridge & Smart Migration
   - Out-of-the-box native integration for Podman & Distrobox.
   - Declarative 'containers:' block in the 'axiom.yaml' configurations.
