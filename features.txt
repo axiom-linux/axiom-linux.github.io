@@ -34,7 +34,8 @@
 * Desktop Styling: Deeply themed, cohesive aesthetics for pre-installed Desktop 
   Environments (while keeping window managers stock to respect user power-choices).
 * System Utilities: Polished settings wrappers, finalized branding assets, 
-  and automated post-installation firstboot cleanups.
+  automated post-installation firstboot cleanups, and a boot diagnostics 
+  console ('axm boot-profile').
 
 5. DECLARATIVE HYBRID ARCHITECTURE (PLANNED / ALPHAS)
 --------------------------------------------------------------------------------
@@ -42,6 +43,8 @@
   - Establish '/etc/axiom/axiom.yaml' to track local packages and flatpaks.
   - Develop a lightweight Python engine ('axm apply') to resolve package deltas 
     and keyrings locally (offline/local-only).
+  - Restrict raw 'apt' usage, routing all installations through the 'axm' wrapper.
+  - Implement package version pinning/freezing ('axm freeze' / 'axm thaw').
 * Alpha 2: State Rollbacks & Config Management
   - Add dotfiles configuration syncing directly to user home directories.
   - Introduce 'axm rollback' to instantly revert package and configuration states.
@@ -54,10 +57,14 @@
   - Declarative 'containers:' block in the 'axiom.yaml' configurations.
   - Automatic analysis of legacy installations to build declarative 
     dist-packages blueprints.
+  - Develop 'axm run' to execute commands in temporary, auto-purged Podman sandboxes.
 * Alpha 5: Dry-Runs & GUI State Editor
   - Add dry-runs ('axm check') to validate YAML syntax and target additions 
     safely.
   - Graphical state editor mapping toggles directly back into YAML blueprints.
+* Alpha 6: State Portability & ISO Bundler
+  - Develop 'axm export --iso' to compile package lists and user profile skeletons 
+    into a custom bootable Live ISO.
 
 6. BETA PHASE REFINEMENT (PLANNED)
 --------------------------------------------------------------------------------

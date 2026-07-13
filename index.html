@@ -217,7 +217,7 @@
                             <div class="timeline-details">
                                 <ul>
                                     <li>Deeply theme and polish the Desktop Environments (leaving Window Managers stock/clean to respect power-user preferences).</li>
-                                    <li>Refine user-facing system tools, finalize operating system branding, and resolve outstanding bugs.</li>
+                                    <li>Refine user-facing system tools, finalize operating system branding, resolve outstanding bugs, and integrate the boot diagnostics console (<code>axm boot-profile</code>).</li>
                                 </ul>
                             </div>
                         </div>
@@ -244,6 +244,8 @@
                                         <ul>
                                             <li>Establish <code>/etc/axiom/axiom.yaml</code> to track local packages and flatpaks.</li>
                                             <li>Develop lightweight Python engine <code>axm apply</code> to resolve package deltas and keyrings local-only.</li>
+                                            <li>Restrict raw <code>apt</code> commands directly, routing all package actions securely through the <code>axm</code> wrapper.</li>
+                                            <li>Implement package version pinning and freezing (<code>axm freeze</code> / <code>axm thaw</code>).</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -287,6 +289,7 @@
                                             <li>Out-of-the-box native integration for Podman & Distrobox.</li>
                                             <li>Declarative <code>containers:</code> block in <code>axiom.yaml</code> configurations.</li>
                                             <li>Automatic analysis of legacy installations to build declarative dist-packages blueprints.</li>
+                                            <li>Develop <code>axm run</code> to execute commands in temporary, auto-purged Podman sandboxes.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -301,6 +304,19 @@
                                         <ul>
                                             <li>Add dry-runs (<code>axm check</code>) to validate YAML syntax and target additions safely.</li>
                                             <li>Graphical state editor mapping toggles directly back into YAML blueprints.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 6: State Portability & ISO Bundler</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Develop <code>axm export --iso</code> to compile package lists and user profile skeletons into a custom bootable Live ISO.</li>
                                         </ul>
                                     </div>
                                 </div>
