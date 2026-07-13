@@ -1,10 +1,9 @@
-/* =====================================================================
-   Axiom Linux CSS Stylesheet - terminal-themed landing page
-   ===================================================================== */
-
+/*
+    The style.css. My SPECIAL sauce
+*/
 @font-face {
     font-family: 'Fantasque Sans Mono';
-    src: url('https://cdn.jsdelivr.net/gh/belluzj/fantasque-sans@v1.8.0/webfonts/FantasqueSansMono-Regular.woff2') format('woff2');
+    src: url('');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -12,7 +11,7 @@
 
 @font-face {
     font-family: 'Fantasque Sans Mono';
-    src: url('https://cdn.jsdelivr.net/gh/belluzj/fantasque-sans@v1.8.0/webfonts/FantasqueSansMono-Bold.woff2') format('woff2');
+    src: url('https://unpkg.com/fantasque-sans-mono@1.8.0/webfonts/FantasqueSansMono-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -20,7 +19,7 @@
 
 @font-face {
     font-family: 'Fantasque Sans Mono';
-    src: url('https://cdn.jsdelivr.net/gh/belluzj/fantasque-sans@v1.8.0/webfonts/FantasqueSansMono-Italic.woff2') format('woff2');
+    src: url('https://unpkg.com/fantasque-sans-mono@1.8.0/webfonts/FantasqueSansMono-Italic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     font-display: swap;

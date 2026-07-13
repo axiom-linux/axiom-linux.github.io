@@ -70,50 +70,50 @@
                     
                     <div class="feature-card">
                         <div class="feature-index">[01]</div>
-                        <h3 class="feature-title">Declarative Package System</h3>
-                        <p class="feature-desc">Configure your system in a single profile. Rebuild, reproduce, and backup your software stack instantly, inspired by NixOS reproducibility.</p>
+                        <h3 class="feature-title">AXM, A (somewhat) pseudo-declarative package manager</h3>
+                        <p class="feature-desc">AXM allows you to run commands like 'sudo axm pkg-add [PACKAGE]' to add a package to your system, 'sudo axm pkg-rm [PACKAGE]' to (take a wild guess) remove a package, as well as respective freeze and thaw commands to keep a package at a single version and for it to not be updated, thaw being to update it post-freeze.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[02]</div>
-                        <h3 class="feature-title">Centrist Distribution</h3>
-                        <p class="feature-desc">Built for intermediate Linux enthusiasts and purists alike. Blends custom DIY configuration control with a clean, fully functional baseline desktop environment.</p>
+                        <h3 class="feature-title">Axiom is what I'd like to call a 'Centrist Distribution'</h3>
+                        <p class="feature-desc">Axiom gives you options to use install it with an install script (axiom-install), while also giving you options to bootstrap it. Sure, not the MOST purest thing ever (speaking from experience, i used to require myself to exclusively use Gentoo and LFS for a multitude of reasons.), but at least both are an option! Another instance of this 'centrist' idea comes from the Enterprise-level Stable packages vs. Cutting-Edge packages, you don't have to choose, you get both! (currently im writing this at 4pm, im working pretime for my nocturnal brain, there are more instances of the centrist idea)</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[03]</div>
-                        <h3 class="feature-title">Container Multi-Distro Support</h3>
-                        <p class="feature-desc">Native integration for running isolated packages from any distribution inside lightweight, high-performance local containers under a unified command.</p>
+                        <h3 class="feature-title">The non-destructive, semi-immutable multi-distro support using Axiom's AXM "Distropaks"'</h3>
+                        <p class="feature-desc">Native integration for running isolated packages from any distribution inside lightweight, high-performance local containers under a unified command. This comes from utilizing Docker, Podman, and Distrobox to utilize any distro of your choosing. You can pull a distropak by running 'sudo axm-pull [SUPPORTED DISTRO]' (Supported distro list SOON)</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[04]</div>
-                        <h3 class="feature-title">Independent Architecture</h3>
-                        <p class="feature-desc">An independent passion project architected and programmed from scratch by a 13-year-old developer. Made by a coder, for coders.</p>
+                        <h3 class="feature-title">Axiom's Independent Architecture</h3>
+                        <p class="feature-desc">Axiom is an independent passion project architected and programmed from scratch by a 13-year-old developer. Made by a coder, for coders. Yes, you read that correctly. I am 13 years old, solo-deving Axiom. Sure, things like the roadmap and certain elements required the help of vibecoding, but all ideas, MOST of the code, and all the love is from me.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[05]</div>
                         <h3 class="feature-title">Dual-Mode UEFI & Legacy BIOS</h3>
-                        <p class="feature-desc">Architected to boot on everything. Automatically detects firmware, configures partition tables, and provisions bootloaders across Legacy BIOS (MBR/GPT) and modern UEFI.</p>
+                        <p class="feature-desc">Architected to boot on everything. Automatically detects firmware, configures partition tables, and provisions bootloaders across Legacy BIOS (MBR/GPT) and modern UEFI. Pretty self-explainatory. You can only use GRUB, systemd-boot, limine, ect kinda mid compared to buggy GRUB, imo. Don't kill me for that.'</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[06]</div>
-                        <h3 class="feature-title">Interactive Terminal Installer</h3>
+                        <h3 class="feature-title">Easy Interactive Terminal Installer using an archinstall-style install script</h3>
                         <p class="feature-desc">Ditch complex setups. Features a paginated CLI dashboard (<code>axiom-install</code>) with automated single-partition Ext4 structures and automated ESP/Swap provisioning.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[07]</div>
-                        <h3 class="feature-title">Live TTY Desktop Wrapper</h3>
-                        <p class="feature-desc">Start the desktop on your terms. Boots to a clean command line, launching a fully themed LXQt environment instantly with <code>axiom-live-desktop</code>.</p>
+                        <h3 class="feature-title">Live LXQt (that looks eh but works) Desktop Wrapper</h3>
+                        <p class="feature-desc">Start the desktop on your terms. Boots to a clean command line, launching a fully themed LXQt environment instantly with <code>axiom-live-desktop</code>. Also I have prepackaged Waterfox for a simple yet good web browser, yes somehow Axiom is meant for all X86_64 (amd64) devices that are either old rust-buckets or super-computers</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[08]</div>
                         <h3 class="feature-title">Declarative System Blueprints</h3>
-                        <p class="feature-desc">Configure once, reproduce anywhere. Manage all local packages and system configurations via a single YAML file (<code>/etc/axiom/axiom.yaml</code>), inspired by NixOS reproducibility.</p>
+                        <p class="feature-desc">Configure once, reproduce anywhere. Manage all local packages via a single YAML file (<code>/etc/axiom/axiom.yaml</code>), inspired by NixOS reproducibility. This is meant for packages, nothing else. FOR NOW. There is a LOT of deadspace in this box for that reason.</p>
                     </div>
 
                     <div class="feature-card">
