@@ -71,7 +71,7 @@
                     <div class="feature-card">
                         <div class="feature-index">[01]</div>
                         <h3 class="feature-title">AXM, A (somewhat) pseudo-declarative package manager</h3>
-                        <p class="feature-desc">AXM allows you to run commands like 'sudo axm pkg-add [PACKAGE]' to add a package to your system, 'sudo axm pkg-rm [PACKAGE]' to (take a wild guess) remove a package, as well as respective freeze and thaw commands to keep a package at a single version and for it to not be updated, thaw being to update it post-freeze.</p>
+                        <p class="feature-desc">AXM allows you to run commands <code>like sudo axm pkg-add [PACKAGE]</code> to add a package to your system, <code>sudo axm pkg-rm [PACKAGE]</code> to (take a wild guess) remove a package, as well as respective freeze and thaw commands to keep a package at a single version and for it to not be updated, thaw being to update it post-freeze.</p>
                     </div>
 
                     <div class="feature-card">
@@ -83,7 +83,7 @@
                     <div class="feature-card">
                         <div class="feature-index">[03]</div>
                         <h3 class="feature-title">The non-destructive, semi-immutable multi-distro support using Axiom's AXM "Distropaks"'</h3>
-                        <p class="feature-desc">Native integration for running isolated packages from any distribution inside lightweight, high-performance local containers under a unified command. This comes from utilizing Docker, Podman, and Distrobox to utilize any distro of your choosing. You can pull a distropak by running 'sudo axm-pull [SUPPORTED DISTRO]' (Supported distro list SOON)</p>
+                        <p class="feature-desc">Native integration for running isolated packages from any distribution inside lightweight, high-performance local containers under a unified command. This comes from utilizing Docker, Podman, and Distrobox to utilize any distro of your choosing. You can pull a distropak by running <code>sudo axm-pull [SUPPORTED DISTRO]</code> (Supported distro list SOON)</p>
                     </div>
 
                     <div class="feature-card">
@@ -95,13 +95,13 @@
                     <div class="feature-card">
                         <div class="feature-index">[05]</div>
                         <h3 class="feature-title">Dual-Mode UEFI & Legacy BIOS</h3>
-                        <p class="feature-desc">Architected to boot on everything. Automatically detects firmware, configures partition tables, and provisions bootloaders across Legacy BIOS (MBR/GPT) and modern UEFI. Pretty self-explainatory. You can only use GRUB, systemd-boot, limine, ect kinda mid compared to buggy GRUB, imo. Don't kill me for that.'</p>
+                        <p class="feature-desc">Architected to boot on everything. Automatically detects firmware, configures partition tables, and provisions bootloaders across Legacy BIOS (MBR/GPT) and modern UEFI. Pretty self-explainatory. You can only use GRUB. systemd-boot, limine, EFI Stubs, ect are not included and support is not planned for GRUB though old and buggy is better imo. Don't kill me for that.'</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[06]</div>
                         <h3 class="feature-title">Easy Interactive Terminal Installer using an archinstall-style install script</h3>
-                        <p class="feature-desc">Ditch complex setups. Features a paginated CLI dashboard (<code>axiom-install</code>) with automated single-partition Ext4 structures and automated ESP/Swap provisioning.</p>
+                        <p class="feature-desc">The installscript makes it so you do not have to bootstrap your system to install Axiom. complex setups. Features a paginated CLI dashboard (<code>axiom-install</code>) with automated single-partition Ext4 structures and automated ESP/Swap provisioning.</p>
                     </div>
 
                     <div class="feature-card">
@@ -112,32 +112,33 @@
 
                     <div class="feature-card">
                         <div class="feature-index">[08]</div>
-                        <h3 class="feature-title">Declarative System Blueprints</h3>
-                        <p class="feature-desc">Configure once, reproduce anywhere. Manage all local packages via a single YAML file (<code>/etc/axiom/axiom.yaml</code>), inspired by NixOS reproducibility. This is meant for packages, nothing else. FOR NOW. There is a LOT of deadspace in this box for that reason.</p>
+                        <h3 class="feature-title">Declarative System Blueprints using AXMPorts </h3>
+                        <p class="feature-desc">Configure once, reproduce anywhere. Simpily make sure that the major version of Axiom your using is the same as the axmport you import and bob's your uncle! (A tool to upgrade, check, and mess with your axmport will be coming some day). With AXMPorts you can all local packages via a single YAML file (<code>/etc/axm/axm.yaml</code>), inspired by NixOS reproducibility. This is meant for packages, nothing else. FOR NOW. I plan to make an axiport for overall system configs.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[09]</div>
-                        <h3 class="feature-title">Axiom Python Engine & Rollbacks</h3>
-                        <p class="feature-desc">State management at your fingertips. Rebuild system packages locally and revert changes instantly using the lightweight <code>axm apply</code> and <code>axm rollback</code> engines.</p>
+                        <h3 class="feature-title">Rollbacks (ohshitgoback)</h3>
+                        <p class="feature-desc">State management at your fingertips. You mess up your system by installing a bad systempackage? <code>axm rollback</code>. Rebuild system packages locally and revert changes instantly using the lightweight <code>axm apply</code> and <code>axm rollback</code> engines.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[10]</div>
-                        <h3 class="feature-title">Out-of-the-Box Containers Bridge</h3>
-                        <p class="feature-desc">Unite the Linux ecosystem. Declare application sandboxes from any distribution natively via Podman and Distrobox, managed directly through your system YAML configuration.</p>
+                        <h3 class="feature-title">AXM Shells using Distropaks</h3>
+                        <p class="feature-desc">By running <code>axm run-shell [DISTROPAK, LEAVE BLANK FOR NATIVE]</code>.
+                        That's about it.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[11]</div>
-                        <h3 class="feature-title">Non-Destructive Migrator</h3>
-                        <p class="feature-desc">Transition to Axiom seamlessly. A smart migration installer that safely shrinks your host OS, preserves your personal home files, and imports them cleanly on first boot.</p>
+                        <h3 class="feature-title">Non-Destructive Migrator (/home transfers)</h3>
+                        <p class="feature-desc">Transition to Axiom seamlessly. A smart migration installer that safely shrinks your host OS, preserves your personal home files, and imports them cleanly on first boot. First it seperates your home parition from the main OLD partition, renaming it "TRANSFER", in this partition, copying any files will cause them to be transfered during the <code>axiom-migrate</code> wizard.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[12]</div>
                         <h3 class="feature-title">Optimized Stable Debian Base</h3>
-                        <p class="feature-desc">Stable Debian core, optimized for speed. Deeply debloated of bloatware and tuned with custom kernel optimizations for minimal resource footprint and maximum performance.</p>
+                        <p class="feature-desc">Stable Debian core, you need super powers to break it, optimized for speed. Deeply debloated of bloatware and tuned with custom kernel optimizations for minimal resource footprint and maximum performance.</p>
                     </div>
 
                 </div>
@@ -147,7 +148,7 @@
         <!-- Interactive Roadmap Section -->
         <section class="window" id="roadmap-window">
             <div class="window-header">
-                <div class="window-title">axiom --roadmap</div>
+                <div class="window-title">cat /home/axiom/roadmap.txt</div>
             </div>
             <div class="window-body roadmap-container">
                 <div class="roadmap-tabs">
@@ -302,7 +303,7 @@
                                         <span class="status-badge todo">PLANNED</span>
                                     </div>
                                     <div class="timeline-details">
-                                        <ul>
+                                        <ul>13460433
                                             <li>Add dry-runs (<code>axm check</code>) to validate YAML syntax and target additions safely.</li>
                                             <li>Graphical state editor mapping toggles directly back into YAML blueprints.</li>
                                         </ul>
