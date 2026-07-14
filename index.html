@@ -429,6 +429,9 @@
     </div>
 
     <script>
+        // Increment visitor counter on view
+        fetch('https://api.counterapi.dev/v1/axiom-linux/views/up').catch(console.error);
+
         function downloadLatest() {
             const select = document.getElementById("latest-download-select");
             window.location.href = select.value;
