@@ -24,6 +24,25 @@
 </head>
 <body>
 
+    <!-- Top Navigation Bar -->
+        <a href="index.html" class="navbar-brand">
+            <img src="axiphoto/axiomicon.png" alt="Axiom Icon">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="downloads/index.html" class="nav-link" id="nav-mirror-btn">Mirror</a></li>
+            <li class="nav-item"><a href="wiki/index.html" class="nav-link">Wiki</a></li>
+            <li class="nav-item"><a href="axm/index.html" class="nav-link">AXM</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link community-link" id="community-dropdown-btn">Community ▾</a>
+                <ul class="dropdown-menu" id="community-dropdown-menu">
+                    <li><a href="https://discord.gg/9YHAZUZ4PX" target="_blank" rel="noopener">Discord Server</a></li>
+                    <li><a href="https://tiktok.com/@axiomlinux" target="_blank" rel="noopener">TikTok</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
     <div class="container">
         
         <!-- Header / Hero Section -->
@@ -44,12 +63,9 @@
                         <span class="mirror-tag">[LATEST]</span>
                         <span class="mirror-name">axiomlinux-CM4-amd64.iso</span>
                         <span class="mirror-size">(2.7 GB)</span>
-                        <div class="download-action-group">
-                            <select id="latest-download-select" class="mirror-select">
-                                <option value="https://archive.org/download/axiom-linux-releases/axiomlinux-CM4-amd64.iso">ISO Image</option>
-                                <option value="https://archive.org/download/axiom-linux-releases/axiomlinux-CM4-amd64.md5">MD5 Checksum</option>
-                            </select>
-                            <button onclick="downloadLatest()" class="mirror-btn" style="cursor: pointer;">DOWNLOAD LATEST</button>
+                        <div class="download-action-group" style="display: flex; gap: 10px;">
+                            <a href="https://archive.org/download/axiom-linux-releases/axiomlinux-CM4-amd64.iso" class="mirror-btn" style="text-decoration: none;">DOWNLOAD ISO</a>
+                            <a href="https://archive.org/download/axiom-linux-releases/axiomlinux-CM4-amd64.md5" class="mirror-btn" style="text-decoration: none; background-color: #333; color: #fff;">MD5</a>
                         </div>
                     </div>
                     <!-- DOWNLOADS_END -->
@@ -70,75 +86,62 @@
                     
                     <div class="feature-card">
                         <div class="feature-index">[01]</div>
-                        <h3 class="feature-title">AXM, A (somewhat) pseudo-declarative package manager</h3>
-                        <p class="feature-desc">AXM allows you to run commands <code>like sudo axm pkg-add [PACKAGE]</code> to add a package to your system, <code>sudo axm pkg-rm [PACKAGE]</code> to (take a wild guess) remove a package, as well as respective freeze and thaw commands to keep a package at a single version and for it to not be updated, thaw being to update it post-freeze.</p>
+                        <h3 class="feature-title">The AXM Engine: C-Compiled & Declarative Core</h3>
+                        <p class="feature-desc">AXM is written directly in C for sub-millisecond execution because I wanted it to be insanely fast. It keeps your system declarative via files in <code>/etc/axiom/axm/packages.d/</code> (like <code>system.list</code> and <code>flatpak.list</code>). You run <code>sudo axm pkg-add [PACKAGE]</code> to add packages, <code>axm pkg-rfsh</code> to refresh repos (built Sid version-drift proof so unstable mirror shifts don't ruin your day), <code>axm pkg-updt</code> to cache updates locally, and <code>axm apply</code> to install everything (with Gentoo source compilation prompts if you're compiling). It uses a memory-mapped binary search index (<code>packages.bin</code>) built weekly via GitHub Actions to resolve cross-distro package names in under 1ms. And yes, to keep you from accidentally nuking your pristine host system, native system installs require a physical reach keyguard (<code>ctrl + ;</code>) and typing <code>&lt;3 Proceed</code> (yes, Deltarune-inspired). Take a wild guess why!</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[02]</div>
-                        <h3 class="feature-title">Axiom is what I'd like to call a 'Centrist Distribution'</h3>
-                        <p class="feature-desc">Axiom gives you options to use install it with an install script (axiom-install), while also giving you options to bootstrap it. Sure, not the MOST purest thing ever (speaking from experience, i used to require myself to exclusively use Gentoo and LFS for a multitude of reasons.), but at least both are an option! Another instance of this 'centrist' idea comes from the Enterprise-level Stable packages vs. Cutting-Edge packages, you don't have to choose, you get both! (currently im writing this at 4pm, im working pretime for my nocturnal brain, there are more instances of the centrist idea)</p>
+                        <h3 class="feature-title">AXM Distropaks: Run Any Distro, Sandboxed & Containerized</h3>
+                        <p class="feature-desc">Basically, you get to run software from literally any distro without installing their system junk or breaking your main OS libraries. Want Arch or CachyOS packages? Grab <code>rolling</code>. Fedora? <code>secure</code>. Rawhide? <code>latest</code>. Debian, Alpine, Gentoo? Just pick the tag. Other solutions like Bedrock Linux modify the core host filesystem directly, or like Vanilla OS and BlendOS use heavier multi-layer setups. Distropaks integrate directly into your host system—exporting desktop shortcuts, icons, and binaries so they feel and launch just like native packages! If you ever want to test a sketchy script or run a quick command without leaving a trace, type <code>axm run [DISTROPAK]</code> to drop into a throwaway shell that nukes itself the second you exit. That's pretty much it.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[03]</div>
-                        <h3 class="feature-title">The non-destructive, semi-immutable multi-distro support using Axiom's AXM "Distropaks"'</h3>
-                        <p class="feature-desc">Native integration for running isolated packages from any distribution inside lightweight, high-performance local containers under a unified command. This comes from utilizing Docker, Podman, and Distrobox to utilize any distro of your choosing. You can pull a distropak by running <code>sudo axm-pull [SUPPORTED DISTRO]</code> (Supported distro list SOON)</p>
+                        <h3 class="feature-title">Axiom-SOS, Blackbox & Emergency Rescue (ohshitgoback)</h3>
+                        <p class="feature-desc">Universal log diagnostics and emergency recovery. <code>Axiom-SOS</code> aggregates and hypersorts error logs across all containers and host layers by severity from worst to best—so kernel panics sit at the very top and chatty driver warnings sit at the bottom where you can ignore them. If your system refuses to boot, mount your drive on another PC and run <code>axiom-blackbox</code> to get a clean tree of root errors that bricked it. And if you messed up your system, <code>axiom-rescue</code> gives you an initramfs prompt on boot: press <code>'R'</code> for a 1-key Ext4 snapshot rollback in under 5 seconds. Bob's your uncle!</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[04]</div>
-                        <h3 class="feature-title">Axiom's Independent Architecture</h3>
-                        <p class="feature-desc">Axiom is an independent passion project architected and programmed from scratch by a 13-year-old developer. Made by a coder, for coders. Yes, you read that correctly. I am 13 years old, solo-deving Axiom. Sure, things like the roadmap and certain elements required the help of vibecoding, but all ideas, MOST of the code, and all the love is from me.</p>
+                        <h3 class="feature-title">Axiom-Modhub & Throttled Background Updates</h3>
+                        <p class="feature-desc">Hardware, driver, and kernel integration center. <code>axiom-modhub</code> manages proprietary GPU drivers, firmware, and motherboard BIOS updates. It includes <code>axiom-modhub -kS</code> (Kernel Swap) which brings up an eselect-like kernel list to instantly swap kernels in 3 seconds using <code>kexec</code> without rebooting your motherboard! Plus, background updates (<code>axm apply --idle</code>) run inside cgroups with <code>ionice</code> low-priority scheduling so your game or video compilation never loses a single frame.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[05]</div>
-                        <h3 class="feature-title">Dual-Mode UEFI & Legacy BIOS</h3>
-                        <p class="feature-desc">Architected to boot on everything. Automatically detects firmware, configures partition tables, and provisions bootloaders across Legacy BIOS (MBR/GPT) and modern UEFI. Pretty self-explainatory. You can only use GRUB. systemd-boot, limine, EFI Stubs, ect are not included and support is not planned for GRUB though old and buggy is better imo. Don't kill me for that.'</p>
+                        <h3 class="feature-title">Axiom-Locker, CVE Shield & Cryptographic Auditor</h3>
+                        <p class="feature-desc">Total permission and security control. <code>axiom-locker</code> is a TUI/CLI permission manager for Flatpaks, Snaps, and Distropaks, automatically tweaking Flatpak permissions on install to act like native apps out of the box. <code>axiom-shield</code> runs on a timer (every boot or weekly) to check your installed packages against live zero-day CVE databases, while <code>axm audit</code> scans system binary hashes against official GPG signatures to make sure nothing was tampered with.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[06]</div>
-                        <h3 class="feature-title">Easy Interactive Terminal Installer using an archinstall-style install script</h3>
-                        <p class="feature-desc">The installscript makes it so you do not have to bootstrap your system to install Axiom. complex setups. Features a paginated CLI dashboard (<code>axiom-install</code>) with automated single-partition Ext4 structures and automated ESP/Swap provisioning.</p>
+                        <h3 class="feature-title">Axiom-Welcome, TUI Appstore & Real-Time Theme Engine</h3>
+                        <p class="feature-desc">First-boot setup, visual browsing, and desktop styling. <code>axiom-welcome</code> launches a clean TUI wizard right after install to help you pick drivers and distropaks. <code>axiom-appstore</code> gives you a keyboard-navigable terminal storefront (inspired by Pamac and Shelly). If an APT package dependency collides on Sid, <code>axm resolve</code> automatically offers 1-click alternative Distropak paths. And <code>axiom-theme</code> translates your wallpapers, cursors, and GTK/Qt/XFCE themes across all installed DEs in real-time so your desktop looks cohesive everywhere.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[07]</div>
-                        <h3 class="feature-title">Live LXQt (that looks eh but works) Desktop Wrapper</h3>
-                        <p class="feature-desc">Start the desktop on your terms. Boots to a clean command line, launching a fully themed LXQt environment instantly with <code>axiom-live-desktop</code>. Also I have prepackaged Waterfox for a simple yet good web browser, yes somehow Axiom is meant for all X86_64 (amd64) devices that are either old rust-buckets or super-computers</p>
+                        <h3 class="feature-title">Shadow VMs, Axiom Time-Machine & State Portability</h3>
+                        <p class="feature-desc">Test risky stuff and control system state safely. Run <code>axm check</code> for dry-run validation. Want to test a sketchy package or script? <code>axm try [PACKAGE]</code> (Shadow VM) spins up a temporary microVM overlay of your live desktop that completely evaporates when you close it! <code>axm revert</code> (Axiom Time-Machine) rolls back Ext4 OverlayFS & rsync state without touching your personal home files. Inspect color-coded state changes with <code>axm diff</code>, or export your exact setup to a Live ISO with <code>axm export --iso</code>.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[08]</div>
-                        <h3 class="feature-title">Declarative System Blueprints using AXMPorts </h3>
-                        <p class="feature-desc">Configure once, reproduce anywhere. Simpily make sure that the major version of Axiom your using is the same as the axmport you import and bob's your uncle! (A tool to upgrade, check, and mess with your axmport will be coming some day). With AXMPorts you can all local packages via a single YAML file (<code>/etc/axm/axm.yaml</code>), inspired by NixOS reproducibility. This is meant for packages, nothing else. FOR NOW. I plan to make an axiport for overall system configs.</p>
+                        <h3 class="feature-title">Pristine Debian Base, Archinstall-Style Setup & Dual Boot</h3>
+                        <p class="feature-desc">Stable, super-speed base. Deeply debloated Debian Sid core with custom kernel tuning—you need superpowers to break it. Includes <code>axiom-install</code>, a paginated CLI dashboard modeled after the ease of archinstall so you don't have to manually bootstrap unless you want to. Automatically configures Ext4 single partitions, ESP/Swap, and GRUB supporting both Legacy BIOS (MBR/GPT) and UEFI. Includes <code>axiom-live-desktop</code> for an instant LXQt live environment (looks eh but works!). Prepackaged with Waterfox for a good browser on everything from rust-buckets to supercomputers.</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[09]</div>
-                        <h3 class="feature-title">Rollbacks (ohshitgoback)</h3>
-                        <p class="feature-desc">State management at your fingertips. You mess up your system by installing a bad systempackage? <code>axm rollback</code>. Rebuild system packages locally and revert changes instantly using the lightweight <code>axm apply</code> and <code>axm rollback</code> engines.</p>
+                        <h3 class="feature-title">Centrist Philosophy & 13-Year-Old Solo Developer Story</h3>
+                        <p class="feature-desc">Axiom is an independent passion project architected and programmed from scratch by a 13-year-old developer. Made by a coder, for coders. Yes, you read that correctly. I am 13 years old, solo-deving Axiom. Sure, things like the roadmap and certain elements required the help of AI/vibecoding, but all ideas, MOST of the code, and all the love is from me. Axiom is a 'centrist distribution'—giving you options to use an install script or bootstrap (speaking from experience, I used to require myself to exclusively use Gentoo and LFS for a multitude of reasons!), cutting-edge rolling packages or rock-solid enterprise stability, and pristine host isolation alongside containerized Distropaks. Don't kill me for that!</p>
                     </div>
 
                     <div class="feature-card">
                         <div class="feature-index">[10]</div>
-                        <h3 class="feature-title">AXM Shells using Distropaks</h3>
-                        <p class="feature-desc">By running <code>axm run-shell [DISTROPAK, LEAVE BLANK FOR NATIVE]</code>.
-                        That's about it.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-index">[11]</div>
-                        <h3 class="feature-title">Non-Destructive Migrator (/home transfers)</h3>
-                        <p class="feature-desc">Transition to Axiom seamlessly. A smart migration installer that safely shrinks your host OS, preserves your personal home files, and imports them cleanly on first boot. First it seperates your home parition from the main OLD partition, renaming it "TRANSFER", in this partition, copying any files will cause them to be transfered during the <code>axiom-migrate</code> wizard.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-index">[12]</div>
-                        <h3 class="feature-title">Optimized Stable Debian Base</h3>
-                        <p class="feature-desc">Stable Debian core, you need super powers to break it, optimized for speed. Deeply debloated of bloatware and tuned with custom kernel optimizations for minimal resource footprint and maximum performance.</p>
+                        <h3 class="feature-title">Non-Destructive Migrator & Seamless /home Transfers</h3>
+                        <p class="feature-desc">Transitioning to Axiom without wiping your personal life. The <code>axiom-migrate</code> installer allows you to migrate from your existing Linux distro directly into Axiom without losing any of your personal files, game saves, or dotfiles. It works by safely shrinking your old host OS filesystem, creating a temporary cache partition named "TRANSFER", moving your <code>/home</code> directory and browser profiles over, and then installing Axiom's pristine core. On first boot, the first-boot wizard automatically reconciles permissions and links your home data back cleanly. Zero data loss, zero manual USB backup hassle, and absolutely zero bullshit.</p>
                     </div>
 
                 </div>
@@ -243,10 +246,11 @@
                                     </div>
                                     <div class="timeline-details">
                                         <ul>
-                                            <li>Establish <code>/etc/axiom/axiom.yaml</code> to track local packages and flatpaks.</li>
-                                            <li>Develop lightweight Python engine <code>axm apply</code> to resolve package deltas and keyrings local-only.</li>
-                                            <li>Restrict raw <code>apt</code> commands directly, routing all package actions securely through the <code>axm</code> wrapper.</li>
-                                            <li>Implement package version pinning and freezing (<code>axm freeze</code> / <code>axm thaw</code>).</li>
+                                            <li>Implement high-performance <code>axm</code> package engine in C.</li>
+                                            <li>Track state under <code>/etc/axiom/axm/packages.d/</code> (<code>system.list</code> and <code>flatpak.list</code>).</li>
+                                            <li>Build <code>axm pkg-add</code> with interactive source selectors, automatic bypass, fuzzy matching, physical keyguards (<code>ctrl + ;</code>), and confirmation overrides (<code>&lt;3 Proceed</code>).</li>
+                                            <li>Integrate memory-mapped binary search index (<code>packages.bin</code>) for sub-1ms cross-distro package resolution.</li>
+                                            <li>Implement <code>axm pkg-rfsh</code> (Sid mirror drift resilient), <code>axm pkg-updt</code> (pre-stage caching), and <code>axm apply</code> (with Gentoo compile prompts).</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -254,44 +258,15 @@
                                 <div class="timeline-item">
                                     <div class="timeline-dot planned"></div>
                                     <div class="timeline-header">
-                                        <span class="timeline-title">Alpha 2: State Rollbacks & Config Management</span>
-                                        <span class="status-badge todo">PLANNED</span>
-                                    </div>
-                                    <div class="timeline-details">
-                                        <ul>
-                                            <li>Add dotfiles configuration syncing directly to user home directories.</li>
-                                            <li>Introduce <code>axm rollback</code> to instantly revert package/config states.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot planned"></div>
-                                    <div class="timeline-header">
-                                        <span class="timeline-title">Alpha 3: The Axiom Migrator & Boot Profiling</span>
-                                        <span class="status-badge todo">PLANNED</span>
-                                    </div>
-                                    <div class="timeline-details">
-                                        <ul>
-                                            <li>Develop non-destructive in-place installer migration tool.</li>
-                                            <li>Safely shrinks host OS, sets up temp cache, and imports user home data cleanly on first boot.</li>
-                                            <li>Integrate the boot performance diagnostics console (<code>axm boot-profile</code>).</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot planned"></div>
-                                    <div class="timeline-header">
-                                        <span class="timeline-title">Alpha 4: Container Bridge & Smart Migration</span>
+                                        <span class="timeline-title">Alpha 2: Container Bridge & Smart Migration</span>
                                         <span class="status-badge todo">PLANNED</span>
                                     </div>
                                     <div class="timeline-details">
                                         <ul>
                                             <li>Out-of-the-box native integration for Podman & Distrobox.</li>
-                                            <li>Declarative <code>containers:</code> block in <code>axiom.yaml</code> configurations.</li>
-                                            <li>Automatic analysis of legacy installations to build declarative dist-packages blueprints.</li>
+                                            <li>Declarative container, snap, and appimage configurations in <code>axm/packages.d/</code>.</li>
                                             <li>Develop <code>axm run</code> to execute commands in temporary, auto-purged Podman sandboxes.</li>
+                                            <li>Automatic legacy system analysis to build declarative dist-packages blueprints.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -299,25 +274,66 @@
                                 <div class="timeline-item">
                                     <div class="timeline-dot planned"></div>
                                     <div class="timeline-header">
-                                        <span class="timeline-title">Alpha 5: Dry-Runs</span>
-                                        <span class="status-badge todo">PLANNED</span>
-                                    </div>
-                                    <div class="timeline-details">
-                                        <ul>13460433
-                                            <li>Add dry-runs (<code>axm check</code>) to validate YAML syntax and target additions safely.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot planned"></div>
-                                    <div class="timeline-header">
-                                        <span class="timeline-title">Alpha 6: State Portability & ISO Bundler</span>
+                                        <span class="timeline-title">Alpha 3: The Axiom Migrator & System Diagnostics (Axiom-SOS)</span>
                                         <span class="status-badge todo">PLANNED</span>
                                     </div>
                                     <div class="timeline-details">
                                         <ul>
-                                            <li>Develop <code>axm export --iso</code> to compile package lists and user profile skeletons into a custom bootable Live ISO.</li>
+                                            <li>Non-destructive in-place installer migration tool (/home partition preservation).</li>
+                                            <li>Integrate boot performance diagnostics console (<code>axm boot-profile</code>).</li>
+                                            <li>Build <code>Axiom-SOS</code>: Universal log hub indexing errors worst-to-best across containers and host.</li>
+                                            <li>Develop <code>axiom-blackbox</code> offline recovery script to parse crash failure trees.</li>
+                                            <li>Develop <code>axiom-rescue</code> initramfs emergency console for 5-second 1-key snapshot rollbacks.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 4: System Integration, Healing & Permissions</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Implement <code>axiom-modhub</code> (hardware, drivers, and <code>axiom-modhub -kS</code> 3-sec live <code>kexec</code> kernel swap).</li>
+                                            <li>Implement <code>axiom-autoheal</code> background daemon to heal configuration drift.</li>
+                                            <li>Build throttled background updates (<code>axm apply --idle</code>) via cgroups and <code>ionice</code>.</li>
+                                            <li>Build <code>axiom-locker</code> TUI/CLI permission manager (auto-granting native Flatpak permissions upon install).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 5: State Portability, Welcome Wizard, Appstore & Theme Sync</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Implement <code>axiom-welcome</code> interactive TUI first-boot setup wizard.</li>
+                                            <li>Implement <code>axiom-appstore</code> keyboard-navigable TUI package storefront.</li>
+                                            <li>Implement <code>axm resolve</code> smart conflict resolver for multi-engine package collisions.</li>
+                                            <li>Implement <code>axiom-theme</code> real-time styling sync across GTK, Qt, and XFCE registries.</li>
+                                            <li>Develop <code>axm export --iso</code> state bundler to compile Live ISOs.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot planned"></div>
+                                    <div class="timeline-header">
+                                        <span class="timeline-title">Alpha 6: Validation, Simulation, Security & Auditing</span>
+                                        <span class="status-badge todo">PLANNED</span>
+                                    </div>
+                                    <div class="timeline-details">
+                                        <ul>
+                                            <li>Add dry-runs (<code>axm check</code>) to validate configuration lists safely.</li>
+                                            <li>Implement <code>axm try [PACKAGE]</code> (Shadow VM) microVM overlay sandbox.</li>
+                                            <li>Implement <code>axm revert</code> (Axiom Time-Machine) Ext4 OverlayFS / rsync differential rollbacks.</li>
+                                            <li>Implement <code>axm diff</code> visual state inspector and <code>axm audit</code> GPG binary auditor.</li>
+                                            <li>Implement <code>axiom-shield</code> timed zero-day CVE vulnerability monitor.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -442,6 +458,35 @@
             document.getElementById('roadmap-' + tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
+
+        // Community Dropdown Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('community-dropdown-btn');
+            var menu = document.getElementById('community-dropdown-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    menu.classList.toggle('show');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.dropdown')) {
+                        menu.classList.remove('show');
+                    }
+                });
+            }
+
+            // Mirror Link Smooth Scroll
+            document.querySelectorAll('a[href*="#download-window"]').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var target = document.getElementById('download-window');
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

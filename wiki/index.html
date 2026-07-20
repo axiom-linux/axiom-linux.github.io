@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiom Wiki - Work In Progress</title>
+    
+    <meta property="og:title" content="Axiom Wiki">
+    <meta property="og:description" content="Official Wiki for Axiom GNU/Linux.">
+    <meta property="og:image" content="https://axiom-linux.github.io/logo.png">
+    
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .wiki-page-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .wip-window {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .wip-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .seal-img {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: none;
+        }
+
+        .wip-title {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-family: 'Fantasque Sans Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .wip-subtext {
+            font-size: 1.2rem;
+            color: var(--muted-color);
+            margin-bottom: 30px;
+            font-family: 'Fantasque Sans Mono', monospace;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000000;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Fantasque Sans Mono', monospace;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">
+            <img src="../axiphoto/axiomicon.png" alt="Axiom Icon">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../downloads/" class="nav-link">Mirror</a></li>
+            <li class="nav-item"><a href="../wiki/" class="nav-link">Wiki</a></li>
+            <li class="nav-item"><a href="../axm/" class="nav-link">AXM</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link community-link" id="community-dropdown-btn">Community ▾</a>
+                <ul class="dropdown-menu" id="community-dropdown-menu">
+                    <li><a href="https://discord.gg/axiom" target="_blank" rel="noopener">Discord Server</a></li>
+                    <li><a href="https://tiktok.com/@axiom.os" target="_blank" rel="noopener">TikTok</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="wiki-page-wrapper">
+        <section class="window active wip-window">
+            <div class="window-header">
+                <div class="window-title">axiom-wiki --status</div>
+            </div>
+            <div class="window-body wip-container">
+                <img src="../axiphoto/axiomseal.png" alt="Axiom Seal" class="seal-img">
+                <h1 class="wip-title">Work In Progress</h1>
+                <p class="wip-subtext">Come back later!</p>
+                <a href="../index.html" class="back-btn">&lt; RETURN HOME</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('community-dropdown-btn');
+            var menu = document.getElementById('community-dropdown-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    menu.classList.toggle('show');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.dropdown')) {
+                        menu.classList.remove('show');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
