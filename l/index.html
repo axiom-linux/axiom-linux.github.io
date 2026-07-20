@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiom GNU/Linux | Hub</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="download-container" style="max-width: 600px; margin: 60px auto; border: 1px solid var(--border-color);">
+
+        <header style="margin-bottom: 25px; border-bottom: 1px dashed var(--border-color); padding-bottom: 15px;">
+            <div class="prompt-text">axiom@bottlecat.xyz:~//links_hub</div>
+            <div class="feature-desc">Select an endpoint below to interface with the distribution ecosystem.</div>
+        </header>
+
+        <main id="links-target" class="mirror-list"></main>
+
+        <footer>
+            <p>Generated dynamically via <a href="https://github.com" target="_blank">GitHub Actions</a></p>
+        </footer>
+    </div>
+
+    <script>
+        fetch('links.json')
+            .then(response => response.json())
+            .then(data => {
+                const target = document.getElementById('links-target');
+                data.links.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'mirror-item';
+
+                    const tagSpan = document.createElement('span');
+                    tagSpan.className = 'mirror-tag';
+                    tagSpan.innerText = item.tag || '»';
+
+                    const nameSpan = document.createElement('span');
+                    nameSpan.className = 'mirror-name';
+                    nameSpan.innerText = item.label;
+
+                    const actionBtn = document.createElement('a');
+                    actionBtn.className = 'mirror-btn';
+                    actionBtn.href = item.url;
+                    actionBtn.innerText = item.action_text || 'LAUNCH';
+                    actionBtn.target = "_blank";
+                    actionBtn.rel = "noopener noreferrer";
+
+                    itemDiv.appendChild(tagSpan);
+                    itemDiv.appendChild(nameSpan);
+                    itemDiv.appendChild(actionBtn);
+                    target.appendChild(itemDiv);
+                });
+            })
+            .catch(err => console.error('Error compiling hub blueprint:', err));
+    </script>
+</body>
+</html>

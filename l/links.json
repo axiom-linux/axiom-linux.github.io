@@ -1,0 +1,22 @@
+{
+  "links": [
+    {
+      "tag": "[GITHUB]",
+      "label": "Official Github Organization",
+      "url": "https://github.com/axiom-linux",
+      "action_text": "View"
+    },
+    {
+      "tag": "[MEDIA]",
+      "label": "Official TikTok Updates and Devlog",
+      "url": "https://www.tiktok.com/@axiomlinux",
+      "action_text": "Watch"
+    },
+    {
+      "tag": "[EMAIL]",
+      "label": "Contact Axiom",
+      "url": "mailto:axiom@bottlecat.xyz",
+      "action_text": "Mail"
+    }
+  ]
+}
