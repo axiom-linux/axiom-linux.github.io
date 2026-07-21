@@ -645,10 +645,20 @@ footer a:hover {
     cursor: pointer;
 }
 
+::selection {
+    background-color: rgba(96, 165, 250, 0.35);
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background-color: rgba(96, 165, 250, 0.35);
+    color: #ffffff;
+}
+
 .nav-link:hover {
     color: var(--accent-color);
     border-color: var(--accent-color);
-    background-color: rgba(0, 255, 136, 0.08);
+    background-color: rgba(96, 165, 250, 0.12);
 }
 
 /* Pride Flag Colored Community Link */
@@ -707,4 +717,20 @@ footer a:hover {
     background-color: var(--accent-color);
     color: #000000;
     font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .navbar-nav {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
 }
